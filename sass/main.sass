@@ -1,2 +1,61 @@
-body
-  background-color: red
+//iports ********************************************************************************
+@import 'mixins'
+@import 'fonts'
+@import 'reset'
+// **************************************************************************************
+
+
+// color declaration ********************************************************************
+$c-white: #ffffff
+$c-black: #000000
+$c-blue: #0000bb
+$c-red: #ff0000
+$c-primary: #81A594
+$c-secondary: #00628B
+$c-suplement: #E6E6DC
+$c-darkred: #b00000
+// **************************************************************************************
+
+body 
+  background-color: $c-primary !important
+  min-width: 100%
+  min-height: 100%
+
+.header
+  padding: 0
+  margin: 0
+  width: 100%
+  height: 400px
+  transform: skewY(-5deg) translateY(-80px)
+  position: relative
+
+  .header-title
+    position: absolute
+    bottom: 0
+    padding: 1rem
+    font-size: 3rem
+    font-family: $nosifer
+    color: $c-darkred
+    +text-border($c-black)
+    transition: all 0.5s
+
+    @media screen and (max-width: 628px)
+      font-size: 2rem
+
+    &:hover
+      color: $c-blue
+      +text-border($c-white)
+
+.header-picture
+  background-image: url('../img/zima.jpg')
+  background-repeat: no-repeat
+  background-position-y: 70%
+  background-size: cover
+  z-index: -99
+
+.navbar-skew
+  transform: skewY(-5deg) translateY(-80px)
+  background-color: $c-secondary
+
+.main-container
+  +tt()
