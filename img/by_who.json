@@ -1,7 +1,19 @@
-zima: By <a href="//commons.wikimedia.org/wiki/User:Psy_guy" title="User:Psy guy">Psy guy</a> - <span class="int-own-work" lang="pl">Praca własna</span>, <a href="http://creativecommons.org/licenses/by-sa/3.0/" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=533690">Link</a>
-
-wiosna: By <a href="//commons.wikimedia.org/wiki/User:BenHur" title="User:BenHur">Benjamin Gimmel</a>, <a href="http://creativecommons.org/licenses/by-sa/3.0/" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=88418">Link</a>
-
-Jesien: https://commons.wikimedia.org/wiki/User:Mohylek
-
-Lato: By <a href="//commons.wikimedia.org/wiki/User:Simonizer" title="User:Simonizer">Simon Koopmann</a> - <span class="int-own-work" lang="en">Own work</span>, <a href="https://creativecommons.org/licenses/by-sa/2.5" title="Creative Commons Attribution-Share Alike 2.5">CC BY-SA 2.5</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=1287397">Link</a>
+{
+  "zima": {
+    "picture": "zima.jpg",
+    "author": "Psy_guy"
+  },
+  "wiosna": {
+    "picture": "wiosna.jpg",
+    "author": "BenHur"
+  },
+  "jesien": {
+    "picture": "jesien.jpg",
+    "author": "Mohylek"
+  },
+  "lato": {
+    "picture": "lato.jpg",
+    "author": "Simonizer"
+  }
+}
+// commons.wikimedia.org/wiki/User:

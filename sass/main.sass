@@ -12,7 +12,7 @@ $c-blue: #0000bb
 $c-red: #ff0000
 $c-primary: #81A594
 $c-secondary: #00628B
-$c-suplement: #E6E6DC
+$c-suplement: #8bc9ec
 $c-darkred: #b00000
 // **************************************************************************************
 
@@ -56,6 +56,28 @@ body
 .navbar-skew
   transform: skewY(-5deg) translateY(-80px)
   background-color: $c-secondary
+  box-shadow: 2px 2px 15px $c-black
+  border-bottom: 1px solid $c-black
 
 .main-container
   +tt()
+  background-color: $c-secondary
+  position: absolute
+  padding: 10rem 0 5rem
+  top: -150px
+  z-index: -999
+  min-height: 90%
+
+.weather-header
+  background-color: lighten($c-secondary, 50%)
+  padding: 0.5rem 0.5rem 0.1rem
+  border-radius: 0.3rem
+
+  .weather-body
+    background-color: $c-suplement
+
+    p
+      color: $c-white
+      padding: 0.4rem
+      +bb()
+      +tt()
