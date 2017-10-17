@@ -33,6 +33,14 @@ $(document).ready(function () {
     $('.active').removeClass('active');
     $(this).addClass('active');
   })
-  
+
+
+  //function to find class that starts with and remove it
+  // var classes = $('#sample').attr('class').split(' ');
+  // $.each(classes, function (i, c) {
+  //   if (c.indexOf('wi-omw-') == 0) {
+  //     $('#sample').removeClass(c);
+  //   }
+  // });
 
 });
