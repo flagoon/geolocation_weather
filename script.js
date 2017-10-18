@@ -4,11 +4,15 @@ $(document).ready(function () {
   document.querySelector('body').addEventListener('click', function (e) {
     if (e.target.classList.contains('city-result')) {
 
+      //regex to extract city name, regex matches all polish signs, (), space and -
+      var cityName = e.target.innerHTML.match(/[a-ząęćśźżłóń()\- ]+(?=\<)/gi);
+      $('#city-name').text(cityName[0]);
+
       //regex to match every latitude and longitude value and asign it to array
       var arr = e.target.innerHTML.match(/(\d\d\.\d\d*)/g);
 
       //get data from weather api
-      getData(arr[0], arr[1]);
+      getData(arr[0], arr[1], cityName);
     }
   });
 
@@ -31,10 +35,36 @@ $(document).ready(function () {
     }
   }
 
-  function getData(x, y) {
+  function getData(x, y, name) {
     var url = 'https://fcc-weather-api.glitch.me/api/current?lat=' + x + '&lon=' + y;
+    var dayOrNight = '',
+      sunrise = '',
+      sunset = '',
+      timeNow = '';
     $.getJSON(url, function (data) {
-      console.log(data);
+      if (!name) {
+        $('#city-name').text(data.name);
+      }
+
+      /*************************************************************************
+      I need to figure out how to remove specific class and add another one. For 
+      now jquery and .removeClass with callback replace?? it seems reasonable
+      *************************************************************************/
+
+      sunrise = data.sys.sunrise;
+      sunset = data.sys.sunset;
+      timeNow = new Date().getTime();
+
+      if ((timeNow > sunrise) && (timeNow < sunset)) {
+        dayOrNight = 'day';
+      } else {
+        dayOrNight = 'night';
+      }
+
+      $('.main-weather-icon').addClass('wi-owm-' + dayOrNight + '-' + data.weather[0].id);
+      $('#temp').text(data.main.temp);
+      $('#humidity').text(data.main.humidity);
+      $('#pressure').text(data.main.pressure);
     });
   }
 
