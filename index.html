@@ -11,8 +11,8 @@
     crossorigin='anonymous'>
   <script src='https://use.fontawesome.com/f52da0fed1.js'></script>
   <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
-  <link rel="stylesheet" href="./css/weather-icons/weather-css/weather-icons.min.css">
-  <link rel="stylesheet" href="./css/weather-icons/weather-css/weather-icons-wind.min.css">
+  <link rel='stylesheet' href='./css/weather-icons/weather-css/weather-icons.min.css'>
+  <link rel='stylesheet' href='./css/weather-icons/weather-css/weather-icons-wind.min.css'>
 </head>
 
 <body>
@@ -47,15 +47,54 @@
   </nav>
   <main class='container main-container'>
     <div class='row'>
+
       <!-- main text section -->
-      <section class='col-12 col-lg-8'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, nemo? Nemo iure officiis nisi, distinctio iusto tempore
-        earum impedit et repudiandae illum voluptatibus quia sequi enim adipisci nostrum laudantium aspernatur!</section>
+      <section class='col-12 col-lg-8'>
+        <article class='container-fluid row article-wrapper'>
+          <img src='./img/jesien.jpg' alt='Jest jesień' class='col-12 col-md-4 article-pic mb-4'/>
+          <div class='col-12 col-md-8 article-content'>
+            <h3 class='article-title'>Lorem Ipsum</h3>
+            <p class='lead'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque et mollitia molestias ratione aut tenetur modi
+              sunt soluta error? Officiis perferendis expedita, neque laboriosam?</p>
+            <p class='article-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque et mollitia molestias ratione aut tenetur modi
+              sunt soluta error? Officiis perferendis expedita at obcaecati quis ipsam repudiandae error, neque laboriosam?</p>
+            <p class='article-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est impedit exercitationem quasi vitae, ex non voluptas ab enim minus! Nulla! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque et mollitia molestias ratione aut tenetur modi
+              sunt soluta error? Officiis perferendis expedita at obcaecati quis ipsam repudiandae error, neque laboriosam?</p>
+          </div>
+        </article>
+        <hr />
+        <article class='container-fluid row article-wrapper'>
+            <img src='./img/wiosna.jpg' alt='Jest jesień' class='col-12 col-md-4 article-pic mb-4'/>
+            <div class='col-12 col-md-8 article-content'>
+              <h3 class='article-title'>Lorem Ipsum</h3>
+              <p class='lead'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque et mollitia molestias ratione aut tenetur modi
+                sunt soluta error? Officiis perferendis expedita, neque laboriosam?</p>
+              <p class='article-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque et mollitia molestias ratione aut tenetur modi
+                sunt soluta error? Officiis perferendis expedita at obcaecati quis ipsam repudiandae error, neque laboriosam?</p>
+              <p class='article-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est impedit exercitationem quasi vitae, ex non voluptas ab enim minus! Nulla! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque et mollitia molestias ratione aut tenetur modi
+                sunt soluta error? Officiis perferendis expedita at obcaecati quis ipsam repudiandae error, neque laboriosam?</p>
+            </div>
+          </article>
+          <hr />
+          <article class='container-fluid row article-wrapper'>
+              <img src='./img/lato.jpg' alt='Jest jesień' class='col-12 col-md-4 article-pic mb-4'/>
+              <div class='col-12 col-md-8 article-content'>
+                <h3 class='article-title'>Lorem Ipsum</h3>
+                <p class='lead'>asdasdLorem ipsum dolor sit amet consectetur adipisicing elit. Eaque et mollitia molestias ratione aut tenetur modi
+                  sunt soluta error? Officiis perferendis expedita, neque laboriosam?</p>
+                <p class='article-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque et mollitia molestias ratione aut tenetur modi
+                  sunt soluta error? Officiis perferendis expedita at obcaecati quis ipsam repudiandae error, neque laboriosam?</p>
+                <p class='article-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est impedit exercitationem quasi vitae, ex non voluptas ab enim minus! Nulla! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque et mollitia molestias ratione aut tenetur modi
+                  sunt soluta error? Officiis perferendis expedita at obcaecati quis ipsam repudiandae error, neque laboriosam?</p>
+              </div>
+            </article>
+      </section>
 
       <!-- side bar -->
       <aside class='col-4 hidden-md-down'>
 
         <!-- weather app -->
-        <div class='weather container-fluid'>
+        <div class='weather container-fluid sticky-top'>
           <div class='weather-header row'>
             <h3>
               Pogoda:
@@ -64,23 +103,18 @@
           <div class='weather-body row'>
             <p id='city-name' class='col-12 city-name d-inline-block mt-3 mb-2'>Bielsko-biała</p>
             <i class='col-12 wi wi-owm-night-200 text-center main-weather-icon mb-3'></i>
-            <div class="container mt-4" style="left: -15px">
-              <div class="row">
-                <i class='col-4 wi wi-thermometer weather-icon text-center'></i>
-                <i class='col-4 wi wi-humidity weather-icon text-center'></i>
-                <i class='col-4 wi wi-barometer weather-icon text-center'></i>
+            <div class='container mt-4' style='left: -15px'>
+              <div class='row'>
+                <i class='col-4 wi wi-thermometer weather-icon text-center mb-2'></i>
+                <i class='col-4 wi wi-humidity weather-icon text-center mb-2'></i>
+                <i class='col-4 wi wi-barometer weather-icon text-center mb-2'></i>
                 <p id='temp' class='d-inline-block col-4 text-center'>22°</p>
                 <p id='humidity' class='d-inline-block col-4 text-center'>20%</p>
                 <p id='pressure' class='d-inline-block col-4 text-center'>1015.82</p>
               </div>
             </div>
           </div>
-
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid labore vel illo placeat fuga blanditiis velit aperiam corporis
-          voluptates incidunt quaerat suscipit rerum quam aliquam pariatur adipisci porro, eveniet aspernatur autem consectetur
-          consequuntur numquam nisi similique optio. Modi, ratione est!
         </div>
-        <div class='article-list'></div>
       </aside>
     </div>
   </main>
