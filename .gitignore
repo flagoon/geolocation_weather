@@ -4,3 +4,6 @@ package.json
 css/
 .eslintrc.json
 wi-icons-map.txt
+cities_geo.csv
+passwords.php
+.vscode
