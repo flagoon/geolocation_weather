@@ -18,7 +18,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0 && $result->num_rows < 11) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "<div onClick='alertMe(this)'><div class='city-result mb-1 p-2 rounded'>$row[city]</div><div class='coord_lat hidden-xs-up'>$row[coord_lat]</div><div class='coord_lng hidden-xs-up'>$row[coord_lng]</div></div>";
+        echo "<div class='city-result mb-1 p-2 rounded'>$row[city]<div class='coord_lat hidden-xs-up'>$row[coord_lat]</div><div class='coord_lng hidden-xs-up'>$row[coord_lng]</div></div>";
     }
 } else {
     echo "<div class='text-warning'>Nie ma takiego miasta, lub zbyt dużo wyników. Popraw się!</div>";
