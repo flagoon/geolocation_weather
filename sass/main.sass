@@ -68,39 +68,20 @@ body
   min-height: 90%
 
 
-.weather
+.weather-header
+  background-color: lighten($c-secondary, 50%)
+  padding: 0.5rem 0.5rem 0.1rem
+  border-radius: 0.3rem
 
+.weather-body
+  color: $c-white
 
-  .weather-header
-    background-color: lighten($c-secondary, 50%)
-    padding: 0.5rem 0.5rem 0.1rem
-    border-radius: 0.3rem
+  .city-name
+    font-size: 2rem
+    line-height: 2rem
 
-  .weather-body
-    color: $c-white
-    +bb()
+  .main-weather-icon
+    font-size: 5rem
 
-    .main-weather-icon
-      font-size: 5rem
-      color: $c-white
-
-    .weather-icon
-      color: $c-white
-      font-size: 1.5rem
-      max-height: 2.5rem
-
-    i 
-      padding: 0
-      line-height: 1.5
-
-    p
-      color: $c-white
-      padding: 0.5rem
-      font-size: 1.2rem
-      line-height: 1rem
-
-    .city-name
-      padding: 0.5rem
-      font-size: 1.6rem
-      font-weight: bold
-      color: $c-black
+.weather-icon
+  font-size: 3rem
