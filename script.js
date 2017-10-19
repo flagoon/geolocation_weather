@@ -16,14 +16,16 @@ $(document).ready(function () {
     }
   });
 
+  //get starting location for weather
   getGeoLoc();
 
+  //this function gets longitude and latitude from browser, quite inaccurate
   function getGeoLoc() {
 
     //check if browser can get geolocation
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function (pos) {
-        //return lat ang lng as obj
+        //get lat ang lng as obj
         var lat = pos.coords.latitude;
         var lng = pos.coords.longitude;
 
@@ -35,24 +37,34 @@ $(document).ready(function () {
     }
   }
 
+
+  /*
+  this function gets data from weather api. value name is optional. If not given, 
+  it's taken automaticly from api. It was inaccurate, and when choosing cities manualy,
+  values were different (ie. choosing Krakow gave value Srodmiescie). That's why when
+  choose from city list, it change name correctly.
+  */
   function getData(x, y, name) {
+
+    //creating url to api
     var url = 'https://fcc-weather-api.glitch.me/api/current?lat=' + x + '&lon=' + y;
     var dayOrNight = '',
       sunrise = '',
       sunset = '',
       timeNow = '';
+
     $.getJSON(url, function (data) {
+      
+      //if name is not given in atributes
       if (!name) {
         $('#city-name').text(data.name);
       }
 
-      /*************************************************************************
-      I need to figure out how to remove specific class and add another one. For 
-      now jquery and .removeClass with callback replace?? it seems reasonable
-      *************************************************************************/
-
-      sunrise = data.sys.sunrise;
-      sunset = data.sys.sunset;
+      //decide if the icon will be day or night variety
+      //added '000' because api is giving timestamp without miliseconds and current time is with it, 
+      //therefore it's always bigger, always night time :)
+      sunrise = data.sys.sunrise + '000';
+      sunset = data.sys.sunset + '000';
       timeNow = new Date().getTime();
 
       if ((timeNow > sunrise) && (timeNow < sunset)) {
@@ -61,14 +73,28 @@ $(document).ready(function () {
         dayOrNight = 'night';
       }
 
+      //creating icon
       $('.main-weather-icon').addClass('wi-owm-' + dayOrNight + '-' + data.weather[0].id);
-      $('#temp').text(data.main.temp);
-      $('#humidity').text(data.main.humidity);
+      $('#temp').text(data.main.temp + '°');
+      $('#humidity').text(data.main.humidity + '%');
       $('#pressure').text(data.main.pressure);
     });
   }
 
-  //bootstrap adding/removing active class on links
+  /*
+  this function selects element's class list, and then, thanks to foreach(), check for the 
+  specific string and then deletes the class. It's doing more, than needed, removing all classes
+  */
+  function removeIcon() {
+    var classes = document.querySelector('.main-weather-icon').classList;
+    classes.foreach(function (value) {
+      if (value.indexOf('wi-owm-') == 0) {
+        classes.remove(value);
+      }
+    });
+  }
+
+  //bootstrap adding/removing active class on links, somehow it didn't work
   $('.nav-link').on('click', function () {
     $('.active').removeClass('active');
     $(this).addClass('active');
@@ -108,16 +134,8 @@ $(document).ready(function () {
     if ($('#city-input').val() === '') {
       getGeoLoc();
     } else {
+      //send city name to function that is looking for specific string in database
       showCities($('#city-input').val());
     }
   });
-
-  //function to find class that starts with and remove it
-  // var classes = $('#sample').attr('class').split(' ');
-  // $.each(classes, function (i, c) {
-  //   if (c.indexOf('wi-omw-') == 0) {
-  //     $('#sample').removeClass(c);
-  //   }
-  // });
-
 });
