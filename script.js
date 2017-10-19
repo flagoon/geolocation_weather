@@ -73,7 +73,9 @@ $(document).ready(function () {
         dayOrNight = 'night';
       }
 
-      //creating icon
+      //removing icon class
+      removeIcon();
+      //creating icon class and adding it
       $('.main-weather-icon').addClass('wi-owm-' + dayOrNight + '-' + data.weather[0].id);
       $('#temp').text(data.main.temp + '°');
       $('#humidity').text(data.main.humidity + '%');
@@ -87,7 +89,7 @@ $(document).ready(function () {
   */
   function removeIcon() {
     var classes = document.querySelector('.main-weather-icon').classList;
-    classes.foreach(function (value) {
+    classes.forEach(function (value) {
       if (value.indexOf('wi-owm-') == 0) {
         classes.remove(value);
       }
