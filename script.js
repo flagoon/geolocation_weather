@@ -75,7 +75,7 @@ $(document).ready(function () {
 
       //removing icon class
       removeIcon();
-      //creating icon class and adding it
+      //creating icon
       $('.main-weather-icon').addClass('wi-owm-' + dayOrNight + '-' + data.weather[0].id);
       $('#temp').text(data.main.temp + '°');
       $('#humidity').text(data.main.humidity + '%');
