@@ -90,7 +90,7 @@ $(document).ready(function () {
   function removeIcon() {
     var classes = document.querySelector('.main-weather-icon').classList;
     classes.forEach(function (value) {
-      if (value.indexOf('wi-owm-') == 0) {
+      if (value.indexOf('wi-owm-') === 0) {
         classes.remove(value);
       }
     });
@@ -100,7 +100,7 @@ $(document).ready(function () {
   $('.nav-link').on('click', function () {
     $('.active').removeClass('active');
     $(this).addClass('active');
-  })
+  });
 
 
   /*
@@ -110,7 +110,7 @@ $(document).ready(function () {
   */
 
   function showCities(city) {
-    if (city == '') {
+    if (city === '') {
       document.getElementById('data').innerHTML = '';
       return;
     }
@@ -121,10 +121,10 @@ $(document).ready(function () {
       var xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
     }
     xmlhttp.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200) {
+      if (this.readyState === 4 && this.status === 200) {
         document.getElementById('data').innerHTML = this.responseText;
       }
-    }
+    };
     xmlhttp.open('GET', 'find_city.php?city=' + city, true);
     xmlhttp.send();
   }
