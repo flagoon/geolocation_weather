@@ -4,7 +4,7 @@ $(document).ready(function () {
   document.querySelector('body').addEventListener('click', function (e) {
     if (e.target.classList.contains('city-result')) {
 
-      //regex to extract city name, regex matches all polish signs, (), space and -
+      //regex to extract city name form innerHTML, regex matches all polish signs, (), space and -
       var cityName = e.target.innerHTML.match(/[a-ząęćśźżłóń()\- ]+(?=\<)/gi);
       $('#city-name').text(cityName[0]);
 
@@ -112,7 +112,7 @@ $(document).ready(function () {
   function showCities(city) {
     if (city === '') {
       document.getElementById('data').innerHTML = '';
-      return;
+      return false;
     }
     if (window.XMLHttpRequest) {
       // code for IE7+, Firefox, Chrome, Opera, Safari
